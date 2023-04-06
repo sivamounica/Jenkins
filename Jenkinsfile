@@ -21,13 +21,14 @@ agent any
       steps {
         script {
         def remote = [:]
-      remote.name = 'myapp_server'
-      remote.host = '172.31.15.41'
+          remote.name = 'myapp_server'
+          remote.host = '172.31.15.41'
           remote.user = "${APP_USER}"
           remote.password = "${APP_PWD}"
-      remote.allowAnyHosts = true
+          remote.allowAnyHosts = true
           sshCommand remote: remote, command: "curl -u ${JFROG_USER}:${JFROG_PWD} -L -O 'https://rudradevops.jfrog.io/artifactory/maven-demo/${BUILD_NUMBER}/hello-world-0.1.0.jar'"
-      sshCommand remote: remote, command: "for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done"
+          sshCommand remote: remote, command: "sleep 10s"
+          sshCommand remote: remote, command: "java -jar hello-world-0.1.0.jar"
     }
       }
     }
