@@ -7,6 +7,11 @@ agent any
       git 'https://github.com/dstar55/docker-hello-world-spring-boot.git'
     }
     }
+    stage("Build") {
+      steps {
+      sh 'mvn clean install'
+      }
+    }
   }
 }
   
