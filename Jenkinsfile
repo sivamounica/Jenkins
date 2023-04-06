@@ -12,6 +12,11 @@ agent any
       sh 'mvn clean install'
       }
     }
+    stage("Push into JFROG") {
+      steps {
+      sh 'curl -u devops:Devops@123 -T target/hello-world-0.1.0.jar "https://rudradevops.jfrog.io/artifactory/maven-demo/java/hello-world-0.1.0.jar"'
+      }
+    }
   }
 }
   
