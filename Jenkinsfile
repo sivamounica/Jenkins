@@ -14,7 +14,7 @@ agent any
     }
     stage("Push into JFROG") {
       steps {
-      sh 'curl -u devops:Devops@123 -T target/hello-world-0.1.0.jar "https://rudradevops.jfrog.io/artifactory/maven-demo/java/hello-world-0.1.0.jar"'
+      sh 'curl -u $JFROG_USER:$JFROG_PWD -T target/hello-world-0.1.0.jar "https://rudradevops.jfrog.io/artifactory/maven-demo/java/hello-world-0.1.0.jar"'
       }
     }
   }
