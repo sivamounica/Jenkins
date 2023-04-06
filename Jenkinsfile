@@ -28,7 +28,7 @@ agent any
           remote.allowAnyHosts = true
           sshCommand remote: remote, command: "curl -u ${JFROG_USER}:${JFROG_PWD} -L -O 'https://rudradevops.jfrog.io/artifactory/maven-demo/${BUILD_NUMBER}/hello-world-0.1.0.jar'"
           sshCommand remote: remote, command: "sleep 10s"
-          sshCommand remote: remote, command: "java -jar hello-world-0.1.0.jar"
+          sshCommand remote: remote, command: "java -jar hello-world-0.1.0.jar &"
     }
       }
     }
