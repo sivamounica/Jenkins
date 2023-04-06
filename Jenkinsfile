@@ -3,7 +3,7 @@ agent any
   stages {
   stage("Chekout code") {
     steps {
-    sh 'welcome to Jenkins' 
+    sh 'echo "Welcome to Jenkins"' 
     }
     }
   }
