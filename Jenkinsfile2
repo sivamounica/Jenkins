@@ -7,7 +7,9 @@ git 'https://github.com/dstar55/docker-hello-world-spring-boot.git'
 }
 }
 stage("Docker Build Stage") {
+steps {
 sh 'docker build -t hello-world .'
+}
 }
 }
 }
