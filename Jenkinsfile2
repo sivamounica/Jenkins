@@ -1,0 +1,14 @@
+pipeline {
+ageny any {
+stages{
+stage("SCM checkout") {
+steps {
+git 'https://github.com/dstar55/docker-hello-world-spring-boot.git'
+}
+}
+stage("Docker Build Stage") {
+sh 'docker build -t hello-world .'
+}
+}
+}
+}
